@@ -1,0 +1,38 @@
+﻿<Page x:Class="WpfApp2.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      Height="600" Width="800"
+      Title="Menu">
+
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="#AA000000"
+                                Margin="10,10,0,0" />
+                            <Ellipse Fill="{TemplateBinding Background}"
+                                Margin="0, 0, 10, 10" />
+                            <Viewbox Margin="50, 20, 50, 20">
+                                <ContentPresenter />
+                            </Viewbox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Height="500">
+        <TextBlock Text="Career Selection Guide" HorizontalAlignment="Center" FontWeight="Bold" FontSize="50"/>
+        <Button Content="Let's Choose My Job" HorizontalAlignment="Center" Height="115" Margin="130,277,164,108" VerticalAlignment="Center" Width="406" Click="Button_Click" />
+        <Button Content="Interest" HorizontalAlignment="Left" Height="124" Margin="130,113,0,0" VerticalAlignment="Top" Width="191" Click="Button_Click_1" />
+        <Button Content="Ability" HorizontalAlignment="Left" Height="124" Margin="346,113,0,0" VerticalAlignment="Top" Width="190" Click="Button_Click_2"/>
+    </Grid>
+</Page>

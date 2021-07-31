@@ -1,0 +1,51 @@
+﻿<Page x:Class="WpfApp2.MyJob"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MyJob">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="49,38,0,0" TextWrapping="Wrap" Text="My Job" VerticalAlignment="Top" Height="40" Width="86" FontSize="20"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="40" Margin="178,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TextChanged="TextBox_TextChanged"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="258" Margin="49,105,0,0" VerticalAlignment="Top" Width="434" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="myCheck"
+          IsChecked="{Binding ElementName=myjob1, Path=CheckBoxIsChecked}" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border
+            DataContext="{Binding SelectedItem,ElementName=dataGrid}" 
+            Background="White" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="270" Margin="503,105,0,0" VerticalAlignment="Top" Width="225">
+            <StackPanel Margin="10">
+                <TextBlock Text="Job details"
+                           FontWeight="Bold" FontSize="16"
+                           HorizontalAlignment="Center" Margin="10"/>
+
+                <TextBlock Text="Name"/>
+                <TextBox x:Name="namebox" Text="{Binding Name,Mode=TwoWay}"/>
+                <TextBlock Text="Interest"/>
+                <TextBox x:Name="interestbox" Text="{Binding Interest,Mode=TwoWay}"/>
+                <TextBlock Text="Ability"/>
+                <TextBox x:Name="abilitybox" Text="{Binding Ability,Mode=TwoWay}"/>
+                <TextBlock Text="Memo"/>
+                <TextBox x:Name="memobox" Text="{Binding Memo,Mode=TwoWay}"/>
+                <TextBlock Text="Check"/>
+                <TextBox x:Name="checkbox" Text="{Binding Check,Mode=TwoWay}"/>
+
+                <CheckBox x:Name="check" IsChecked="{Binding ElementName=myjob1, Path=CheckBoxIsCheck}"/>
+            </StackPanel>
+        </Border>
+        <Button Content="기록하기" HorizontalAlignment="Left" Height="32" Margin="503,391,0,0" VerticalAlignment="Top" Width="225" Click="Button_Click"/>
+    </Grid>
+</Page>
