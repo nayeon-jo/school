@@ -1,5 +1,4 @@
-# school
-## 학교에서 과제로 냈던 코드들 모음
+# school - 학교에서 과제로 냈던 코드들 Repository
 
 ##  banker.java   
 ### banker's algorithm
